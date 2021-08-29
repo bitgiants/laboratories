@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lab name="newLabTemplate" id="2f312a2c-ce70-48e3-8f04-45b435f97c22" version="1" scripttimeout="300" lock="0">
+  <topology>
+    <nodes>
+      <node id="1" name="R1" type="iol" template="iol" image="i86bi_LinuxL3-AdvEnterpriseK9-M2_157_3_May_2018.bin" ethernet="1" nvram="1024" ram="1024" serial="0" console="" delay="0" icon="Router.png" config="0" left="450" top="195">
+        <interface id="0" name="e0/0" type="ethernet" network_id="1"/>
+        <interface id="16" name="e0/1" type="ethernet" network_id="2"/>
+      </node>
+      <node id="2" name="VPC" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="Desktop.png" config="0" left="684" top="129">
+        <interface id="0" name="eth0" type="ethernet" network_id="1"/>
+      </node>
+      <node id="3" name="ASA" type="qemu" template="asa" image="asa-915-16-k8-CL-L" console="telnet" cpu="1" cpulimit="0" ram="2048" ethernet="4" uuid="2b17deb9-b743-49c1-aefa-64a9b7994ad6" qemu_options="-machine type=pc,accel=tcg -serial mon:stdio -nographic -no-user-config -nodefaults -rtc base=utc -smbios type=1,product=asa5520 -icount 1" qemu_version="4.1.0" qemu_arch="i386" qemu_nic="i82559er" delay="0" icon="ASA.png" config="0" left="276" top="174">
+        <interface id="0" name="eth0" type="ethernet" network_id="2"/>
+        <interface id="1" name="eth1" type="ethernet" network_id="3"/>
+      </node>
+    </nodes>
+    <networks>
+      <network id="1" type="bridge" name="Net-VPCiface_0" left="744" top="169" visibility="0"/>
+      <network id="2" type="bridge" name="Net-ASAiface_0" left="336" top="214" visibility="0"/>
+      <network id="3" type="bridge" name="Net" left="132" top="237" visibility="1"/>
+    </networks>
+  </topology>
+</lab>
